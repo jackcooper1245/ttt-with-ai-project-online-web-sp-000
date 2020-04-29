@@ -38,14 +38,16 @@ def winner
 end
 
 def turn
-  input = current_player.move(board).to_i
-    if board.valid_move?(input.to_s)
+    puts "Please enter a number 1-9:"
+    @input = current_player.move(board)
+    if board.valid_move?(input)
       board.update(input, current_player)
-    else !board.valid_move?(input.to_s)
+    else puts "Please enter a number 1-9:"
+      board.display
       turn
     end
-end
-
+    board.display
+  end
 def play
   until over?
     turn
