@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
 def start
   puts "Welcome to Tic Tac Toe!"
   puts "If you would like to play against AI type '1 player game'"
@@ -33,5 +34,3 @@ def new_game
   end
 end
 start
-
-Game.start
