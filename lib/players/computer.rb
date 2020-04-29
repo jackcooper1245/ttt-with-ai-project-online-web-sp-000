@@ -1,7 +1,5 @@
 require 'pry'
 module Players
-
-
   class Computer < Player
     def move(board)
       if board.cells[4] == " "
@@ -28,4 +26,4 @@ module Players
 end
 
 
-end
+
