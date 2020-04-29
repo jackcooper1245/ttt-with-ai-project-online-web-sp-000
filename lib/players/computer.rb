@@ -1,7 +1,6 @@
 require 'pry'
 module Players
 
-class Computer < Player
 
   class Computer < Player
     def move(board)
@@ -28,6 +27,5 @@ class Computer < Player
   end
 end
 
-end
 
 end
