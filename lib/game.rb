@@ -17,23 +17,29 @@ class Game
     @board = board
     @board.display
   end
+  
   def current_player
     board.turn_count.even? ? player_1 : player_2
   end
+  
   def won?
     WIN_COMBINATIONS.find do |combo|
       board.cells[combo[0]] == board.cells[combo[1]] && board.cells[combo[1]] == board.cells[combo[2]] && board.cells[combo[0]] != " "
     end
   end
+  
   def draw?
     board.full? && !won? ? true : false
   end
+  
   def over?
     (won? || draw?) ? true :false
   end
+  
   def winner
     board.cells[won?[0]] if won?
   end
+  
   def turn
     puts "Please enter a number 1-9:"
     @input = current_player.move(board)
@@ -45,6 +51,7 @@ class Game
     end
     board.display
   end
+  
   def play
     turn until over?
     if won?
@@ -53,4 +60,5 @@ class Game
       puts "Cat's Game!"
     end
   end
+  
 end
