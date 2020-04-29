@@ -24,6 +24,3 @@ module Players
     end
   end
 end
-
-
-
