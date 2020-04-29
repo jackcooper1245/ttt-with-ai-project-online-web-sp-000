@@ -3,18 +3,29 @@ module Players
 
 class Computer < Player
 
-def move(board)
-  if !board.full?
- "1" unless "1" == "X" || "1" == "O"
- "2" unless "2" == "X" || "2" == "O"
- "3" unless "3" == "X" || "3" == "O"
- "4" unless "4" == "X" || "4" == "O"
- "5" unless "5" == "X" || "5" == "O"
- "6" unless "6" == "X" || "6" == "O"
- "7" unless "7" == "X" || "7" == "O"
- "8" unless "8" == "X" || "8" == "O"
- "9" unless "9" == "X" || "9" == "O"
- end
+  class Computer < Player
+    def move(board)
+      if board.cells[4] == " "
+        "5"
+      elsif board.cells[0] == " "
+        "1"
+      elsif board.cells[2] == " "
+        "3"
+      elsif board.cells[6] == " "
+        "7"
+      elsif board.cells[8] == " "
+        "9"
+      elsif board.cells[1] == " "
+        "2"
+      elsif board.cells[3] == " "
+        "4"
+      elsif board.cells[5] == " "
+        "6"
+      elsif board.cells[7] == " "
+        "8"
+      end
+    end
+  end
 end
 
 end
