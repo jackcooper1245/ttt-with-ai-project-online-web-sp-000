@@ -8,6 +8,23 @@ def initialize(player_1 = Players::Human.new(token = 'X'), player_2 = Players::H
   @board = board
   @player_1 = player_1
   @player_2 = player_2
+
+end
+
+def self.start
+  puts "Welcome to Tic Tac Toe!"
+  puts "If you would like to play against AI type '1 player game'"
+  puts "If you would like to play against a friend type '2 player game'"
+  puts "If you would like to see the AI play itself type '0 player game'"
+  input = gets.strip
+  case input
+  when '1 player game'
+    Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new).play
+  when '2 player game'
+    Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new).play
+  when '0 player game'
+    Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
+  end
 end
 
 def current_player
